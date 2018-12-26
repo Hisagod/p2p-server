@@ -1,0 +1,10 @@
+<beans xmlns:mvc="http://www.springframework.org/schema/mvc" xmlns="http://www.springframework.org/schema/beans">
+    <!--注解驱动-->
+    <mvc:annotation-driven/>
+
+    <!--配置view-->
+    <bean id="view" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+        <property name="prefix" value="/"/>
+        <property name="suffix" value=".jsp"/>
+    </bean>
+</beans>
