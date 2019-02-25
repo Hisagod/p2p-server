@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<beans xmlns:context="http://www.springframework.org/schema/context"
-       xmlns="http://www.springframework.org/schema/beans">
-    <!--开启注解扫描-->
-    <context:component-scan base-package="com.aib.service"/>
-
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/context
+       http://www.springframework.org/schema/context/spring-context.xsd">
     <!--SQL配置文件-->
     <context:property-placeholder location="classpath*:jdbc.properties"/>
 
@@ -22,9 +24,15 @@
         <!--注入SQL连接池-->
         <property name="dataSource" ref="dataSource"/>
         <!--扫描Entity包，重命名-->
-        <property name="typeAliasesPackage" value="com.aib.entity"/>
+        <property name="typeAliasesPackage" value="com.aib.bean"/>
         <!--扫描mapper映射器-->
-        <property name="mapperLocations" value="classpath:mapper/*.xml"/>
+        <property name="mapperLocations" value="classpath*:mapper/*.xml"/>
+    </bean>
+
+    <!--配置事务管理器-->
+    <bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+        <!--注入数据源-->
+        <property name="dataSource" ref="dataSource"/>
     </bean>
 
     <!--配置Mapper扫描器-->
