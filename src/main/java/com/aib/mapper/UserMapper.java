@@ -1,8 +1,10 @@
-package com.aib.dao;
+package com.aib.mapper;
 
 import com.aib.bean.UserEntity;
+import org.springframework.stereotype.Repository;
 
-public interface UserDao {
+@Repository
+public interface UserMapper {
     /**
      * 根据用户手机号查询用户
      *

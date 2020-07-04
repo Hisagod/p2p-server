@@ -1,6 +1,6 @@
 package com.aib.controller;
 
-import com.aib.bean.BaseEntity;
+import com.aib.bean.BaseBean;
 import com.aib.bean.UserEntity;
 import com.aib.service.impl.UserServiceImpl;
 import com.google.gson.Gson;
@@ -23,14 +23,14 @@ public class UserController {
         if (user == null) {
             service.registerUser(entity);
             if (entity.getId() != 0) {
-                BaseEntity<String> baseEntity = new BaseEntity<>();
+                BaseBean<String> baseEntity = new BaseBean<>();
                 baseEntity.setCode(200);
                 baseEntity.setMsg("注册成功");
                 String json = new Gson().toJson(baseEntity);
                 model.addAttribute("json", json);
             }
         } else {
-            BaseEntity<String> baseEntity = new BaseEntity<>();
+            BaseBean<String> baseEntity = new BaseBean<>();
             baseEntity.setCode(200);
             baseEntity.setMsg("该手机号已注册");
             String json = new Gson().toJson(baseEntity);

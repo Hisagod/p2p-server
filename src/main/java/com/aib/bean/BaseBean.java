@@ -1,6 +1,6 @@
 package com.aib.bean;
 
-public class BaseEntity<D> {
+public class BaseBean<D> {
     private int code;
     private String msg;
     private D data;

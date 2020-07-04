@@ -2,7 +2,7 @@
 <!DOCTYPE mapper
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.aib.dao.UserDao">
+<mapper namespace="com.aib.mapper.UserMapper">
     <select id="findUserByPhone" parameterType="string" resultType="com.aib.bean.UserEntity">
         select * from p2p.users where phone=#{phone}
     </select>
