@@ -1,9 +1,11 @@
 package com.aib.service;
 
-import com.aib.bean.UserEntity;
+import com.aib.bean.UserBean;
 
 public interface UserService {
-    UserEntity findUser(String phone);
+    UserBean findUser(String phone);
 
-    void registerUser(UserEntity entity);
+    int registerUser(String phone, String pwd);
+
+    UserBean login(String phone, String pwd);
 }

@@ -3,15 +3,25 @@
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.aib.mapper.UserMapper">
-    <select id="findUserByPhone" parameterType="string" resultType="com.aib.bean.UserEntity">
-        select * from p2p.users where phone=#{phone}
+    <select id="findUserByPhone" parameterType="string" resultType="com.aib.bean.UserBean">
+        select *
+        from p2p.user
+        where phone = #{phone}
     </select>
 
     <!--注册用户-->
-    <insert id="registerUser" parameterType="com.aib.bean.UserEntity">
+    <insert id="registerUser">
         <selectKey keyProperty="id" order="AFTER" resultType="java.lang.Integer">
             select LAST_INSERT_ID()
         </selectKey>
-        insert into p2p.users(phone,pwd) values (#{phone},#{pwd})
+        insert into p2p.user(name,phone,pwd) values (#{phone},#{phone},#{pwd})
     </insert>
+
+    <!--用户登录-->
+    <select id="login" resultType="com.aib.bean.UserBean">
+        select *
+        from user
+        where phone = #{phone}
+          and pwd = #{pwd}
+    </select>
 </mapper>

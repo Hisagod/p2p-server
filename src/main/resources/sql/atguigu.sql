@@ -19,7 +19,7 @@ USE `p2p`;
 
 /*Table structure for table `customer` */
 
-DROP TABLE IF EXISTS `customer`;
+DROP TABLE IF EXISTS product;
 
 CREATE TABLE `customer` (
   `id` int(10) NOT NULL AUTO_INCREMENT,
@@ -30,7 +30,7 @@ CREATE TABLE `customer` (
 
 /*Data for the table `customer` */
 
-insert  into `customer`(`id`,`name`,`salary`) values (1,'方志',200);
+insert  into product(`id`,`name`,`salary`) values (1,'方志',200);
 
 /*Table structure for table `feedback_table` */
 
@@ -49,7 +49,7 @@ insert  into `feedback_table`(`id`,`department`,`content`) values (7,'理财部'
 
 /*Table structure for table `user_table` */
 
-DROP TABLE IF EXISTS `user_table`;
+DROP TABLE IF EXISTS user;
 
 CREATE TABLE `user_table` (
   `id` int(10) NOT NULL AUTO_INCREMENT,
@@ -63,7 +63,7 @@ CREATE TABLE `user_table` (
 
 /*Data for the table `user_table` */
 
-insert  into `user_table`(`id`,`name`,`password`,`phone`,`imageurl`,`iscredit`) values (1,'李雷','fa7d5dcd109a27b6fa057412ef454626','13212341234','http://192.168.191.1:8080/P2PInvest/images/tx.png',1),(2,'shkstart','e10adc3949ba59abbe56e057f20f883e','13012341234','http://192.168.191.1:8080/P2PInvest/images/tx.png',1),(3,'HanMeimei','2cf07917d46c0d312f36d9d21237baa2','13212341234','http://192.168.191.1:8080/P2PInvest/images/tx.png',1),(4,'Tom','b1e6d1bd047f43af0ab59556c394a376','13712344321','http://192.168.191.1:8080/P2PInvest/images/tx.png',1),(5,'范冰冰','03e3ea991be309de78456bf0f017fa84','13712367898','http://192.168.191.1:8080/P2PInvest/images/tx.png',1),(7,'2432','81dc9bdb52d04dc20036dbd8313ed055','13022332245','http://192.168.191.1:8080/P2PInvest/images/tx.png',1),(8,'songhk','827ccb0eea8a706c4c34a16891f84e7b','13033332222','http://192.168.191.1:8080/P2PInvest/images/tx.png',1),(9,'cody','e10adc3949ba59abbe56e057f20f883e','18611119374','http://192.168.191.1:8080/P2PInvest/images/tx.png',1),(10,'Lilei','e10adc3949ba59abbe56e057f20f883e','13545667864','http://192.168.191.1:8080/P2PInvest/images/tx.png',1),(19,'阿狸','b2ca678b4c936f905fb82f2733f5297f','14477','http://192.168.191.1:8080/P2PInvest/images/tx.png',1),(20,'qq123','111','13011112222','http://192.168.191.1:8080/P2PInvest/images/tx.png',1),(21,'悟空','698d51a19d8a121ce581499d7b701668','13811112222','http://192.168.191.1:8080/P2PInvest/images/tx.png',1),(22,'song nanshen','e10adc3949ba59abbe56e057f20f883e','13012345678','http://192.168.191.1:8080/P2PInvest/images/tx.png',1),(23,'æç©º1','698d51a19d8a121ce581499d7b701668','13811112223','http://192.168.191.1:8080/P2PInvest/images/tx.png',1);
+insert  into user(`id`,`name`,pwd,`phone`,avatar,`iscredit`) values (1,'李雷','fa7d5dcd109a27b6fa057412ef454626','13212341234','http://192.168.191.1:8080/P2PInvest/images/tx.png',1),(2,'shkstart','e10adc3949ba59abbe56e057f20f883e','13012341234','http://192.168.191.1:8080/P2PInvest/images/tx.png',1),(3,'HanMeimei','2cf07917d46c0d312f36d9d21237baa2','13212341234','http://192.168.191.1:8080/P2PInvest/images/tx.png',1),(4,'Tom','b1e6d1bd047f43af0ab59556c394a376','13712344321','http://192.168.191.1:8080/P2PInvest/images/tx.png',1),(5,'范冰冰','03e3ea991be309de78456bf0f017fa84','13712367898','http://192.168.191.1:8080/P2PInvest/images/tx.png',1),(7,'2432','81dc9bdb52d04dc20036dbd8313ed055','13022332245','http://192.168.191.1:8080/P2PInvest/images/tx.png',1),(8,'songhk','827ccb0eea8a706c4c34a16891f84e7b','13033332222','http://192.168.191.1:8080/P2PInvest/images/tx.png',1),(9,'cody','e10adc3949ba59abbe56e057f20f883e','18611119374','http://192.168.191.1:8080/P2PInvest/images/tx.png',1),(10,'Lilei','e10adc3949ba59abbe56e057f20f883e','13545667864','http://192.168.191.1:8080/P2PInvest/images/tx.png',1),(19,'阿狸','b2ca678b4c936f905fb82f2733f5297f','14477','http://192.168.191.1:8080/P2PInvest/images/tx.png',1),(20,'qq123','111','13011112222','http://192.168.191.1:8080/P2PInvest/images/tx.png',1),(21,'悟空','698d51a19d8a121ce581499d7b701668','13811112222','http://192.168.191.1:8080/P2PInvest/images/tx.png',1),(22,'song nanshen','e10adc3949ba59abbe56e057f20f883e','13012345678','http://192.168.191.1:8080/P2PInvest/images/tx.png',1),(23,'æç©º1','698d51a19d8a121ce581499d7b701668','13811112223','http://192.168.191.1:8080/P2PInvest/images/tx.png',1);
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
 /*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;

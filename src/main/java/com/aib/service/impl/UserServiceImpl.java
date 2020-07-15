@@ -1,6 +1,6 @@
 package com.aib.service.impl;
 
-import com.aib.bean.UserEntity;
+import com.aib.bean.UserBean;
 import com.aib.mapper.UserMapper;
 import com.aib.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,12 +13,18 @@ public class UserServiceImpl implements UserService {
     private UserMapper mapper;
 
     @Override
-    public UserEntity findUser(String phone) {
+    public UserBean findUser(String phone) {
         return mapper.findUserByPhone(phone);
     }
 
     @Override
-    public void registerUser(UserEntity entity) {
-        mapper.registerUser(entity);
+    public int registerUser(String phone, String pwd) {
+        return mapper.registerUser(phone, pwd);
+    }
+
+    @Override
+    public UserBean login(String phone, String pwd) {
+        UserBean userBean = mapper.login(phone, pwd);
+        return userBean;
     }
 }
