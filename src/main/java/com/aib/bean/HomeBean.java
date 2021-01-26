@@ -7,20 +7,10 @@ import java.util.List;
 
 @ApiModel(value = "首页数据")
 public class HomeBean {
-    @ApiModelProperty(
-            value = "Banner数据",
-            name = "banner",
-            dataType = "Object",
-            required = true
-    )
+    @ApiModelProperty("Banner")
     private List<BannerBean> banner;
 
-    @ApiModelProperty(
-            value = "产品数据",
-            name = "product",
-            dataType = "Object",
-            required = true
-    )
+    @ApiModelProperty("产品")
     private ProductBean product;
 
     public List<BannerBean> getBanner() {

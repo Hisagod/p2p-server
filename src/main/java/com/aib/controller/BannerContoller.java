@@ -6,10 +6,9 @@ import com.aib.bean.HomeBean;
 import com.aib.bean.ProductBean;
 import com.aib.service.BannerService;
 import com.aib.service.ProductService;
-import io.swagger.annotations.Api;
-import io.swagger.annotations.ApiImplicitParam;
-import io.swagger.annotations.ApiImplicitParams;
-import io.swagger.annotations.ApiOperation;
+import io.swagger.annotations.*;
+import io.swagger.v3.oas.annotations.responses.ApiResponse;
+import io.swagger.v3.oas.annotations.responses.ApiResponses;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -17,7 +16,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
-@Api(value = "首页数据")
+@Api(tags = "首页数据")
 @RestController
 @RequestMapping(value = "banner")
 public class BannerContoller {
@@ -26,12 +25,10 @@ public class BannerContoller {
     @Autowired
     ProductService productService;
 
-    @ApiOperation(
-            value = "根据ID查找用户信息",
-            notes = "查询数据库中某个用户的详细信息",
-            response = HomeBean.class,
-            httpMethod = "GET"
-    )
+    @ApiOperation(value = "获取首页数据", notes = "包含Banner和随机某个产品")
+    @ApiResponses({
+            @ApiResponse(responseCode = "200", description = "请求正常")
+    })
     @GetMapping(value = "getHome")
     private BaseBean<HomeBean> getBannerList() {
         List<BannerBean> bannerBeans = service.findBanner();
