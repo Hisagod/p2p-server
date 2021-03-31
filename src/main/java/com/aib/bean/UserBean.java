@@ -4,16 +4,16 @@ package com.aib.bean;
  * 用户注册
  */
 public class UserBean {
-    private Integer id;
+    private String id;
     private String phone;
     private String name;
     private String avatar;
 
-    public Integer getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(String id) {
         this.id = id;
     }
 
